@@ -15,7 +15,7 @@ import edu.fiu.ffqr.repositories.QuestionnaireRepository;
 @Component
 public class DataLoader {
 	
-	private static final int MAX_QUESTIONNAIRES = 25;
+	private static final int MAX_QUESTIONNAIRES = 1000;
 	
 	private QuestionnaireRepository repository; 
 	
