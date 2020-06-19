@@ -10,8 +10,8 @@ This service will be used to create, delete, and validate questionnaireIDs. It w
 
 >Load database on startup
 - Start the application with the following args: 
-- -Dmongo.questionnaires.load="true"
-- ie) ``mvn spring-boot:run -Dmongo.questionnaires.load="true"``
+- -mongo.questionnaires.load="true"
+- ie) ``mvn spring-boot:run -Dspring-boot.run.arguments="--mongo.questionnaires.load=true"``
 
 >Database Information
 - Database name: **ffq_database**
