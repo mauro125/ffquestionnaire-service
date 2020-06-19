@@ -28,8 +28,9 @@ public class QuestionnaireService {
 		qRepository.delete(q);
 	}
 	
-	public FFQuestionnaire create(String questionnaireID, String issuerID) { 
+	public FFQuestionnaire create(String questionnaireID, String issuerID, boolean submitted) { 
 		 FFQuestionnaire q = new FFQuestionnaire(questionnaireID, issuerID);
+		 q.setSubmitted(submitted);
 		 return qRepository.save(q); 
 	}
 	

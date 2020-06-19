@@ -21,7 +21,7 @@ import edu.fiu.ffqr.models.QuestionnaireValidationResponse;
 import edu.fiu.ffqr.service.QuestionnaireService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class QuestionnaireController {
 
 	@Autowired
@@ -45,10 +45,11 @@ public class QuestionnaireController {
 		//check for duplicate questionnaire ID
 		String questionnaireID = data.getQuestionnaireID();
 		String issuerID = data.getIssuerID();
+		boolean submitted = data.isSubmitted();
 		if (qService.getEntryWithId(questionnaireID) != null) {
 			throw new IllegalArgumentException("A record with that name already exists");
 		}
-		FFQuestionnaire newQuestionnaire = qService.create(questionnaireID, issuerID);
+		FFQuestionnaire newQuestionnaire = qService.create(questionnaireID, issuerID, submitted);
 		return newQuestionnaire;
 	}
 	
@@ -70,7 +71,7 @@ public class QuestionnaireController {
 		
 		for(FFQuestionnaire s : questionnaires)
 		{
-			questionnaire = qService.create(s.getQuestionnaireID(), s.getIssuerID());
+			questionnaire = qService.create(s.getQuestionnaireID(), s.getIssuerID(), s.isSubmitted());
 		}
 		
 		return questionnaires;
