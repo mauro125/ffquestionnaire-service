@@ -35,16 +35,16 @@ public class FFQuestionnaire implements Serializable {
 	
 	public FFQuestionnaire () {}
 	
-	// public FFQuestionnaire(String questionnaireID, String patientName,String patientAge, String gender, Date date, boolean submitted)
-	// {
-	// 	this.id = new ObjectId();
-	// 	this.questionnaireID = questionnaireID;
-	// 	this.patientName = patientName;
-	// 	this.patientAge = patientAge;
-	// 	this.gender = gender;
-	// 	this.date = date;
-	// 	this.submitted = submitted;
-	// }
+	public FFQuestionnaire(String questionnaireID, String patientName,String patientAge, String gender, Date date, boolean submitted)
+	{
+		this.id = new ObjectId();
+		this.questionnaireID = questionnaireID;
+		this.patientName = patientName;
+		this.patientAge = patientAge;
+		this.gender = gender;
+		this.date = date;
+		this.submitted = submitted;
+	}
 	
 	public FFQuestionnaire(String questionnaireID, String issuerID) 
 	{
